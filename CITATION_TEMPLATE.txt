@@ -1,0 +1,60 @@
+CITATION TEMPLATE FOR ACADEMIC USE
+==================================
+
+If you reference, use, or build upon this work, please use the following citation formats:
+
+JOURNAL CITATION (APA Style):
+=============================
+Amer, Z. M. (2025). Novel Three-Stage Progressive Training for Kidney CT Classification using DenseNet201 with Test Time Augmentation. Undergraduate Thesis, Faculty of Computers and Artificial Intelligence, Cairo University. Supervised by Dr. E. Shawky.
+
+IEEE CITATION:
+=============
+Z. M. Amer, "Novel Three-Stage Progressive Training for Kidney CT Classification using DenseNet201 with Test Time Augmentation," Bachelor's Thesis, Faculty of Computers and Artificial Intelligence, Cairo University, supervised by Dr. E. Shawky, Sep. 2025.
+
+BIBTEX:
+=======
+@mastersthesis{amer2025kidney,
+  title={Novel Three-Stage Progressive Training for Kidney CT Classification using DenseNet201 with Test Time Augmentation},
+  author={Amer, Ziad M.},
+  year={2025},
+  school={Faculty of Computers and Artificial Intelligence, Cairo University},
+  type={Bachelor's Thesis},
+  supervisor={Dr. Elham Shawky},
+  month={September},
+  note={Student ID: 20240219}
+}
+
+RESEARCH GATE / ACADEMIA.EDU:
+============================
+Title: Novel Three-Stage Progressive Training for Kidney CT Classification using DenseNet201
+Authors: Ziad M. Amer
+Institution: Faculty of Computers and Artificial Intelligence, Cairo University
+Supervisor: Dr. Elham Shawky
+Year: 2025
+Type: Undergraduate Research
+Keywords: Deep Learning, Medical Imaging, Kidney Classification, Transfer Learning, DenseNet201
+
+METHODOLOGY REFERENCE:
+=====================
+For referencing the specific three-stage methodology:
+
+"The three-stage progressive training approach proposed by Amer (2025) demonstrates significant improvements in medical image classification through strategic layer unfreezing..."
+
+CONTACT FOR PERMISSIONS:
+=======================
+Primary Author: Ziad M. Amer
+Email: ziadmoamer@gmail.com
+Website: ziadamer.com
+Student ID: 20240219
+
+Academic Supervisor: Dr. Elham Shawky
+Institution: FCAI, Cairo University
+
+USAGE TERMS:
+===========
+- Citation required for any academic reference
+- Permission needed for derivative works
+- Commercial use prohibited
+- Contact author for collaboration inquiries
+
+© 2025 Ziad M. Amer. All Rights Reserved.

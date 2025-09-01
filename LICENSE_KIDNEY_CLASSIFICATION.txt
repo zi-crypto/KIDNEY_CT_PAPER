@@ -1,0 +1,71 @@
+PROPRIETARY SOFTWARE LICENSE AGREEMENT
+=========================================
+
+Kidney CT Classification with Three-Stage Progressive Training
+© 2025 Ziad M. Amer. All Rights Reserved.
+
+ACADEMIC CONTEXT:
+================
+- Author: Ziad M. Amer (Student ID: 20240219)
+- Program: Bachelor in Computer Science (Artificial Intelligence)
+- Institution: Faculty of Computers and Artificial Intelligence, Cairo University
+- Supervisor: Dr. Elham Shawky
+- Development Period: August 2025 - September 2025
+- Research Type: Undergraduate Thesis/Capstone Project
+
+TERMS OF USE:
+=============
+
+1. OWNERSHIP
+   This software and all related documentation, methodologies, and innovations 
+   are the exclusive intellectual property of Ziad M. Amer, developed as part 
+   of undergraduate research under academic supervision.
+
+2. PERMITTED USE
+   - Academic review and evaluation by Dr. Elham Shawky and thesis committee
+   - Assessment of Bachelor's thesis at FCAI Cairo University
+   - Educational evaluation by authorized university personnel
+   - Journal publication consideration with proper attribution
+
+3. PROHIBITED USES
+   - Commercial use or exploitation
+   - Distribution to third parties without permission
+   - Reproduction or derivative works without attribution
+   - Unauthorized publication or presentation
+   - Use in competing undergraduate projects
+
+4. ATTRIBUTION REQUIREMENTS
+   Any academic use must include full citation:
+   "Ziad M. Amer. (2025). Novel Three-Stage Progressive Training for Kidney 
+   CT Classification using DenseNet201. Bachelor's Thesis, Faculty of Computers 
+   and Artificial Intelligence, Cairo University. Supervised by Dr. Elham Shawky."
+
+5. RESEARCH COLLABORATION
+   For research collaboration, journal co-authorship, or licensing inquiries:
+   Primary Contact: ziadmoamer@gmail.com
+   Website: ziadamer.com
+   Academic Supervisor: Dr. Elham Shawky, FCAI Cairo University
+
+6. ACADEMIC INTEGRITY
+   This work represents original undergraduate research. Unauthorized use 
+   constitutes academic misconduct and may result in disciplinary action 
+   and legal consequences for intellectual property infringement.
+
+DEVELOPMENT TIMELINE:
+====================
+- Research Initiation: August 2025
+- Implementation Period: August-September 2025  
+- Submission Date: September 2, 2025
+- Independent Research: No external funding
+
+ACCEPTANCE:
+===========
+Use of this software indicates acceptance of these terms and acknowledgment 
+of the original authorship by Ziad M. Amer.
+
+Date: September 2, 2025
+Author: Ziad M. Amer (ID: 20240219)
+Institution: Faculty of Computers and Artificial Intelligence, Cairo University
+Supervisor: Dr. Elham Shawky
+Email: ziadmoamer@gmail.com
+Website: ziadamer.com
