@@ -1,20 +1,20 @@
 CITATION TEMPLATE FOR ACADEMIC USE
 ==================================
 
-If you reference, use, or build upon this work, please use the following citation formats:
+If you reference, use, or build upon this work, please use the following citation formats (updated for the Four-Stage Progressive Training methodology with class-weight optimized ultra fine-tuning):
 
 JOURNAL CITATION (APA Style):
 =============================
-Amer, Z. M. (2025). Novel Three-Stage Progressive Training for Kidney CT Classification using DenseNet201 with Test Time Augmentation. Undergraduate Thesis, Faculty of Computers and Artificial Intelligence, Cairo University. Supervised by Dr. E. Shawky.
+Amer, Z. M. (2025). Progressive Four-Stage Transfer Learning with Class-Weight Optimized Ultra Fine-Tuning and Test Time Augmentation for Kidney CT Classification using DenseNet201. Undergraduate Thesis, Faculty of Computers and Artificial Intelligence, Cairo University. Supervised by Dr. E. Shawky.
 
 IEEE CITATION:
 =============
-Z. M. Amer, "Novel Three-Stage Progressive Training for Kidney CT Classification using DenseNet201 with Test Time Augmentation," Bachelor's Thesis, Faculty of Computers and Artificial Intelligence, Cairo University, supervised by Dr. E. Shawky, Sep. 2025.
+Z. M. Amer, "Progressive Four-Stage Transfer Learning with Class-Weight Optimized Ultra Fine-Tuning and TTA for Kidney CT Classification using DenseNet201," Bachelor's Thesis, Faculty of Computers and Artificial Intelligence, Cairo University, supervised by Dr. E. Shawky, Sep. 2025.
 
 BIBTEX:
 =======
 @mastersthesis{amer2025kidney,
-  title={Novel Three-Stage Progressive Training for Kidney CT Classification using DenseNet201 with Test Time Augmentation},
+  title={Progressive Four-Stage Transfer Learning with Class-Weight Optimized Ultra Fine-Tuning and TTA for Kidney CT Classification using DenseNet201},
   author={Amer, Ziad M.},
   year={2025},
   school={Faculty of Computers and Artificial Intelligence, Cairo University},
@@ -26,19 +26,19 @@ BIBTEX:
 
 RESEARCH GATE / ACADEMIA.EDU:
 ============================
-Title: Novel Three-Stage Progressive Training for Kidney CT Classification using DenseNet201
+Title: Progressive Four-Stage Transfer Learning with Class-Weight Optimized Ultra Fine-Tuning and TTA for Kidney CT Classification using DenseNet201
 Authors: Ziad M. Amer
 Institution: Faculty of Computers and Artificial Intelligence, Cairo University
 Supervisor: Dr. Elham Shawky
 Year: 2025
 Type: Undergraduate Research
-Keywords: Deep Learning, Medical Imaging, Kidney Classification, Transfer Learning, DenseNet201
+Keywords: Deep Learning, Medical Imaging, Kidney Classification, Transfer Learning, DenseNet201, Class Imbalance, Test Time Augmentation
 
 METHODOLOGY REFERENCE:
 =====================
-For referencing the specific three-stage methodology:
+For referencing the specific four-stage methodology:
 
-"The three-stage progressive training approach proposed by Amer (2025) demonstrates significant improvements in medical image classification through strategic layer unfreezing..."
+"The four-stage progressive transfer learning pipeline (Amer, 2025) introduces an imbalance-aware refinement phase after deep unfreezing, combining class-weight optimized ultra fine-tuning with ensemble-style test time augmentation to achieve state-of-the-art performance in kidney CT classification."
 
 CONTACT FOR PERMISSIONS:
 =======================

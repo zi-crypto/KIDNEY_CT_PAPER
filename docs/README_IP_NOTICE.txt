@@ -15,10 +15,11 @@ This research submission contains original, proprietary methodologies developed 
 KEY INNOVATIONS:
 ===============
 
-1. THREE-STAGE PROGRESSIVE TRAINING METHODOLOGY
+1. FOUR-STAGE PROGRESSIVE TRAINING METHODOLOGY
    - Novel approach to transfer learning in medical imaging
    - Optimized layer unfreezing strategy (30→50 layers)
    - Original undergraduate research contribution
+   - Baysain Class Weight Optimization for handling imbalance
    - CPU-optimized implementation for accessibility
 
 2. KIDNEY-SPECIFIC PREPROCESSING PIPELINE
@@ -30,7 +31,7 @@ KEY INNOVATIONS:
 3. TEST TIME AUGMENTATION STRATEGY
    - Five-strategy ensemble approach
    - Medical imaging specific augmentation selection
-   - Performance enhancement methodology achieving 99.76% accuracy
+   - Performance enhancement methodology achieving 99.9199% accuracy
 
 RESEARCH CONTEXT:
 ================

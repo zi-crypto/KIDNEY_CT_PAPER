@@ -1,7 +1,7 @@
 PROPRIETARY SOFTWARE LICENSE AGREEMENT
 =========================================
 
-Kidney CT Classification with Three-Stage Progressive Training
+Kidney CT Classification with Four-Stage Progressive Training
 © 2025 Ziad M. Amer. All Rights Reserved.
 
 ACADEMIC CONTEXT:
@@ -36,7 +36,7 @@ TERMS OF USE:
 
 4. ATTRIBUTION REQUIREMENTS
    Any academic use must include full citation:
-   "Ziad M. Amer. (2025). Novel Three-Stage Progressive Training for Kidney 
+   "Ziad M. Amer. (2025). Novel Four-Stage Progressive Training for Kidney 
    CT Classification using DenseNet201. Bachelor's Thesis, Faculty of Computers 
    and Artificial Intelligence, Cairo University. Supervised by Dr. Elham Shawky."
 
