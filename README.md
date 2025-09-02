@@ -32,7 +32,7 @@ This research introduces a **progressive four-stage transfer learning methodolog
 
 ### Our Innovation
 - **Four-Stage Progressive Training:** Feature extraction → selective fine-tuning → ultra fine-tuning → class-weight optimized ultra refinement
-- **Class Imbalance Mitigation:** Automated computation + (optional) Bayesian search of weighting space
+- **Class Imbalance Mitigation:** Automated computation + Bayesian search of weighting space
 - **Medical-Optimized Preprocessing:** Custom HU windowing + CLAHE enhancement
 - **Test Time Augmentation:** 5-strategy ensemble for maximum accuracy
 - **CPU-Friendly Implementation:** Accessible without expensive GPU hardware
@@ -227,3 +227,4 @@ This project represents the culmination of intensive undergraduate research, dem
 ---
 
 *© 2025 Ziad M. Amer. This project is protected under intellectual property rights while being shared for academic advancement.*
+
