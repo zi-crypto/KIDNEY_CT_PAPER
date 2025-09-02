@@ -1,6 +1,6 @@
-# Kidney CT Classification using DenseNet201 with Three-Stage Progressive Training
+# Kidney CT Classification using DenseNet201 with Four-Stage Progressive Training (P4-DenseNet-TTA)
 
-> **Novel deep learning approach achieving 99.76% accuracy in kidney disease classification from CT scans**
+> **Progressive four-stage transfer learning pipeline with class-weight optimized ultra fine-tuning and Test Time Augmentation (TTA) achieving up to 99.9199% accuracy**
 
 [![License](https://img.shields.io/badge/License-Proprietary-red.svg)](LICENSE_KIDNEY_CLASSIFICATION.txt)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
@@ -10,28 +10,29 @@
 ## Author & Academic Context
 
 **Ziad M. Amer** | Student ID: 20240219  
-Email: ziadmoamer@gmail.com | Website: [ziadamer.com](https://ziadamer.com)
+📧 ziadmoamer@gmail.com | 🌐 [ziadamer.com](https://ziadamer.com)
 
 **Academic Affiliation:**
-- Bachelor in Computer Science (Artificial Intelligence)
-- Faculty of Computers and Artificial Intelligence, Cairo University
-- Supervisor: Dr. Elham Shawky
-- Development: August 2025 - September 2025
+- 🎓 Bachelor in Computer Science (Artificial Intelligence)
+- 🏛️ Faculty of Computers and Artificial Intelligence, Cairo University
+- 👩‍🏫 Supervisor: Dr. Elham Shawky
+- 📅 Development: August 2025 - September 2025
 
 ---
 
 ## What This Project Does
 
-This research introduces a **revolutionary three-stage progressive training methodology** for automatically diagnosing kidney diseases from CT scans. Instead of traditional transfer learning approaches, we developed a smart strategy that gradually "awakens" different parts of the neural network, achieving unprecedented accuracy in medical image classification.
+This research introduces a **progressive four-stage transfer learning methodology** for automatically diagnosing kidney diseases from CT scans. Unlike conventional fine-tuning, the pipeline incrementally unlocks model capacity, then applies **class-weight optimized ultra fine-tuning** to address dataset imbalance before performing ensemble-style Test Time Augmentation.
 
-### **The Problem We Solved**
+### The Problem We Solved
 - Manual kidney disease diagnosis is time-consuming and subjective
 - Traditional AI models struggle with medical imaging nuances
 - Existing approaches often fail to achieve clinical-grade accuracy
 - Need for automated, reliable diagnostic assistance
 
-### **Our Innovation**
-- **Novel 3-Stage Training:** Progressive layer unfreezing strategy
+### Our Innovation
+- **Four-Stage Progressive Training:** Feature extraction → selective fine-tuning → ultra fine-tuning → class-weight optimized ultra refinement
+- **Class Imbalance Mitigation:** Automated computation + (optional) Bayesian search of weighting space
 - **Medical-Optimized Preprocessing:** Custom HU windowing + CLAHE enhancement
 - **Test Time Augmentation:** 5-strategy ensemble for maximum accuracy
 - **CPU-Friendly Implementation:** Accessible without expensive GPU hardware
@@ -42,69 +43,63 @@ This research introduces a **revolutionary three-stage progressive training meth
 
 | Metric | Achievement |
 |--------|-------------|
-| **Accuracy** | **99.76%** (with TTA) |
+| **Accuracy (TTA)** | **99.9199%** |
+| **Accuracy (Standard Inference)** | 97.99% |
 | **Dataset** | 12,446 CT images |
 | **Classes** | Normal, Cyst, Stone, Tumor |
-| **Training Time** | ~30 epochs total |
+| **Overall Epoch Budget** | ~30 effective epochs (early stopping per stage) |
 | **Hardware** | CPU-optimized |
 
 ### Performance Breakdown
-- **Stage 1 (Feature Extraction):** ~97% accuracy
-- **Stage 2 (30-layer Fine-tuning):** ~98.5% accuracy  
-- **Stage 3 (50-layer Ultra Fine-tuning):** ~99.2% accuracy
-- **+ Test Time Augmentation:** **99.76% final accuracy**
+- **Stage 1 (Feature Extraction):** Rapid convergence to ~91–97% val accuracy (classification head only)
+- **Stage 2 (Selective Fine-tuning - last 30 layers):** Stability + representation refinement (~97–98.5%)
+- **Stage 3 (Ultra Fine-tuning - last 50 layers):** Higher domain adaptation (~99.2% peak val)
+- **Stage 4 (Class-Weight Optimized Ultra Fine-tuning):** Imbalance-aware refinement, stable generalization
+- **+ Test Time Augmentation (5-view ensemble):** **99.9199% final accuracy**
 
 ---
 
 ## Technical Innovation
 
-### **Three-Stage Progressive Training**
+### Four-Stage Progressive Training (P4S-TL)
 ```
 Stage 1: Feature Extraction
-├── Freeze all DenseNet201 layers
-├── Train only classification head
-└── Learn domain-specific features
+  - Freeze all DenseNet201 layers
+  - Train only classification head
+  - Establish domain alignment
 
-Stage 2: Selective Fine-tuning  
-├── Unfreeze last 30 layers
-├── Conservative learning rate (1e-5)
-└── Refine high-level features
+Stage 2: Selective Fine-tuning
+  - Unfreeze last 30 layers
+  - LR = 1e-5 (conservative)
+  - Refine high-level discriminative blocks
 
 Stage 3: Ultra Fine-tuning
-├── Unfreeze last 50 layers  
-├── Ultra-conservative rate (5e-6)
-└── Perfect medical imaging adaptation
+  - Unfreeze last 50 layers
+  - LR = 5e-6 (ultra conservative)
+  - Deep adaptation to medical texture statistics
+
+Stage 4: Class-Weight Optimized Ultra Fine-tuning
+  - Compute per-class weights (inverse frequency / smoothed)
+  - Optional Bayesian search over weight scaling
+  - Short controlled refinement (few epochs)
+  - Stabilize minority-class sensitivity
+
+Inference Enhancement: Test Time Augmentation (5-policy ensemble averaging)
 ```
 
-### **Medical Image Preprocessing Pipeline**
+### Medical Image Preprocessing Pipeline
 1. **HU Windowing:** Optimize for kidney tissue contrast
 2. **CLAHE Enhancement:** Adaptive histogram equalization
 3. **Normalization:** Stable neural network input
 4. **Augmentation:** Medical-imaging appropriate transforms
 
-### **Test Time Augmentation Strategy**
+### Test Time Augmentation Strategy
 - Base prediction (no augmentation)
 - Horizontal flip variations
 - Small rotation adjustments  
 - Zoom perturbations
 - Position shifts
 - **Ensemble averaging** for final prediction
-
----
-
-## Project Structure
-
-```
-Kidney_CT_Classification/
-├── Kidney_CT_Classification_DenseNet201_ThreeStage_TTA.ipynb  # Main research notebook
-├── LICENSE_KIDNEY_CLASSIFICATION.txt                         # Usage terms
-├── README_IP_NOTICE.txt                                      # IP documentation  
-├── CITATION_TEMPLATE.txt                                     # Academic citations
-├── README.md                                                 # This file
-├── CT-KIDNEY-DATASET-Normal-Cyst-Tumor-Stone/              # Dataset
-├── Results/DenseNet201/                                      # Model outputs
-└── weights/                                                  # Pre-trained weights
-```
 
 ---
 
@@ -121,10 +116,10 @@ Kidney_CT_Classification/
 1. **Clone/Download** this repository
 2. **Install dependencies:** `pip install tensorflow numpy opencv-python scikit-learn matplotlib seaborn`
 3. **Download dataset** and place in correct directory structure
-4. **Open the notebook:** `Kidney_CT_Classification_DenseNet201_ThreeStage_TTA.ipynb`
+4. **Open the notebook:** `Kidney_CT_Classification_DenseNet201_FourStage_TTA.ipynb`
 5. **Run cells sequentially** to reproduce results
 
-### **CPU-Friendly Design**
+### CPU-Friendly Design
 This implementation is optimized for CPU training, making it accessible without expensive GPU hardware. Training time is reasonable even on standard laptops.
 
 ---
@@ -148,19 +143,20 @@ This implementation is optimized for CPU training, making it accessible without 
 
 ## Academic Impact
 
-### **Research Contributions**
-1. **Novel Training Methodology:** First application of progressive layer unfreezing to kidney CT classification
-2. **Medical Image Optimization:** Custom preprocessing pipeline for kidney-specific enhancement
-3. **High Accuracy Achievement:** 99.76% accuracy surpasses existing literature
-4. **Accessibility Focus:** CPU-based implementation democratizes advanced medical AI
+### Research Contributions
+1. **Four-Stage Progressive Transfer Learning:** Adds imbalance-aware optimization beyond conventional multi-phase fine-tuning
+2. **Medical Image Optimization:** Custom HU + CLAHE pipeline tailored to kidney parenchyma contrast dynamics
+3. **High Accuracy Achievement:** 99.9199% (TTA) surpassing typical DenseNet baselines on this task
+4. **Imbalance Mitigation:** Integrated class-weight computation and optional search improves minority recall
+5. **Accessibility Focus:** CPU-based reproducibility for low-resource academic settings
 
-### **Publication Plans**
+### Publication Plans
 This research is being prepared for journal submission with focus on:
 - Medical imaging conference presentations
 - AI in healthcare publications
 - Open-source medical AI initiatives
 
-### **Why This Matters**
+### Why This Matters
 - **Clinical Applications:** Potential diagnostic assistance tool
 - **Educational Value:** Demonstrates advanced undergraduate research capabilities
 - **Technical Innovation:** Novel approach applicable to other medical imaging tasks
@@ -174,7 +170,7 @@ If you use this work in your research, please cite:
 
 ```bibtex
 @mastersthesis{amer2025kidney,
-  title={Novel Three-Stage Progressive Training for Kidney CT Classification using DenseNet201 with Test Time Augmentation},
+  title={Progressive Four-Stage Transfer Learning with Class-Weight Optimized Ultra Fine-Tuning and TTA for Kidney CT Classification using DenseNet201},
   author={Amer, Ziad M.},
   year={2025},
   school={Faculty of Computers and Artificial Intelligence, Cairo University},
@@ -188,12 +184,12 @@ If you use this work in your research, please cite:
 
 ## Contact & Collaboration
 
-**Interested in Collaboration?**
-- **Email:** ziadmoamer@gmail.com
-- **Website:** [ziadamer.com](https://ziadamer.com)
-- **Academic Supervisor:** Dr. Elham Shawky (FCAI Cairo University)
+**🤝 Interested in Collaboration?**
+- 📧 **Email:** ziadmoamer@gmail.com
+- 🌐 **Website:** [ziadamer.com](https://ziadamer.com)
+- 🎓 **Academic Supervisor:** Dr. Elham Shawky (FCAI Cairo University)
 
-**Open to:**
+**💡 Open to:**
 - Research collaborations
 - Journal co-authorship opportunities
 - Medical AI consultations
@@ -203,13 +199,13 @@ If you use this work in your research, please cite:
 
 ## License & Usage
 
-**Academic Use:** This research is available for academic review and evaluation. 
+**📋 Academic Use:** This research is available for academic review and evaluation. 
 
-**Commercial Use:** Prohibited without explicit permission.
+**🚫 Commercial Use:** Prohibited without explicit permission.
 
-**Citation Required:** Please use proper attribution for any academic reference.
+**📚 Citation Required:** Please use proper attribution for any academic reference.
 
-**Full Terms:** See [LICENSE_KIDNEY_CLASSIFICATION.txt](LICENSE_KIDNEY_CLASSIFICATION.txt)
+**📄 Full Terms:** See [LICENSE_KIDNEY_CLASSIFICATION.txt](LICENSE_KIDNEY_CLASSIFICATION.txt)
 
 ---
 
@@ -224,9 +220,9 @@ If you use this work in your research, please cite:
 
 ## Final Note
 
-This project represents the culmination of intensive undergraduate research, demonstrating that high-impact medical AI research can be conducted with dedication, creativity, and resourcefulness. The novel three-stage methodology opens new possibilities for medical image classification and showcases the potential of student-led innovation in healthcare technology.
+This project represents the culmination of intensive undergraduate research, demonstrating that high-impact medical AI research can be conducted with dedication, creativity, and resourcefulness. The novel four-stage methodology (feature extraction → progressive unfreezing → deep adaptation → imbalance-aware refinement) opens new possibilities for medical image classification and showcases the potential of student-led innovation in healthcare technology.
 
-**Made with care for advancing medical AI accessibility**
+**Developed to advance accessible, reliable medical AI**
 
 ---
 
