@@ -80,7 +80,7 @@ Stage 3: Ultra Fine-tuning
 
 Stage 4: Class-Weight Optimized Ultra Fine-tuning
   - Compute per-class weights (inverse frequency / smoothed)
-  - Optional Bayesian search over weight scaling
+  - Bayesian search over weight scaling
   - Short controlled refinement (few epochs)
   - Stabilize minority-class sensitivity
 
@@ -147,7 +147,7 @@ This implementation is optimized for CPU training, making it accessible without 
 1. **Four-Stage Progressive Transfer Learning:** Adds imbalance-aware optimization beyond conventional multi-phase fine-tuning
 2. **Medical Image Optimization:** Custom HU + CLAHE pipeline tailored to kidney parenchyma contrast dynamics
 3. **High Accuracy Achievement:** 99.9199% (TTA) surpassing typical DenseNet baselines on this task
-4. **Imbalance Mitigation:** Integrated class-weight computation and optional search improves minority recall
+4. **Imbalance Mitigation:** Integrated class-weight computation and search improves minority recall
 5. **Accessibility Focus:** CPU-based reproducibility for low-resource academic settings
 
 ### Publication Plans
@@ -227,4 +227,5 @@ This project represents the culmination of intensive undergraduate research, dem
 ---
 
 *© 2025 Ziad M. Amer. This project is protected under intellectual property rights while being shared for academic advancement.*
+
 
