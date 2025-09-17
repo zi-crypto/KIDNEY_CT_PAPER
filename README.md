@@ -220,12 +220,13 @@ If you use this work in your research, please cite:
 
 ## Final Note
 
-This project represents the culmination of intensive undergraduate research, demonstrating that high-impact medical AI research can be conducted with dedication, creativity, and resourcefulness. The novel four-stage methodology (feature extraction → progressive unfreezing → deep adaptation → imbalance-aware refinement) opens new possibilities for medical image classification and showcases the potential of student-led innovation in healthcare technology.
+This project represents the culmination of intensive undergraduate research, demonstrating that high-impact medical AI research can be conducted with dedication, creativity, and resourcefulness. The novel four-stage methodology (feature extraction → progressive unfreezing → deep adaptation → imbalance-aware refinement) opens new possibilities for medical image classification.
 
 **Developed to advance accessible, reliable medical AI**
 
 ---
 
 *© 2025 Ziad M. Amer. This project is protected under intellectual property rights while being shared for academic advancement.*
+
 
 
