@@ -1,6 +1,6 @@
-# Kidney CT Classification using DenseNet201 with Four-Stage Progressive Training (P4-DenseNet-TTA)
+# Kidney CT Classification using DenseNet201 with Progressive Fine-Tuning Pipeline and Bayesian Optimiztion
 
-> **Progressive four-stage transfer learning pipeline with class-weight optimized ultra fine-tuning and Test Time Augmentation (TTA) achieving up to 99.9199% accuracy**
+> **Progressive fine-tuning pipeline with class-weight balancing by Bayesian optimization and Test-Time Augmentation (TTA) achieving up to 99.9199% accuracy**
 
 [![License](https://img.shields.io/badge/License-Proprietary-red.svg)](LICENSE_KIDNEY_CLASSIFICATION.txt)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
@@ -22,7 +22,8 @@
 
 ## What This Project Does
 
-This research introduces a **progressive four-stage transfer learning methodology** for automatically diagnosing kidney diseases from CT scans. Unlike conventional fine-tuning, the pipeline incrementally unlocks model capacity, then applies **class-weight optimized ultra fine-tuning** to address dataset imbalance before performing ensemble-style Test Time Augmentation.
+This research introduces a **progressive fine-tuning methodology** for automatically diagnosing kidney diseases from CT scans. 
+Unlike conventional fine-tuning, this pipeline incrementally unlocks model capacity, then applies **class-weight balancing by Bayesian optimization** to address dataset imbalance before performing ensemble-style Test-Time Augmentation.
 
 ### The Problem We Solved
 - Manual kidney disease diagnosis is time-consuming and subjective
@@ -34,7 +35,7 @@ This research introduces a **progressive four-stage transfer learning methodolog
 - **Four-Stage Progressive Training:** Feature extraction → selective fine-tuning → ultra fine-tuning → class-weight optimized ultra refinement
 - **Class Imbalance Mitigation:** Automated computation + Bayesian search of weighting space
 - **Medical-Optimized Preprocessing:** Custom HU windowing + CLAHE enhancement
-- **Test Time Augmentation:** 5-strategy ensemble for maximum accuracy
+- **TestTime Augmentation:** 5-strategy ensemble for maximum accuracy
 - **CPU-Friendly Implementation:** Accessible without expensive GPU hardware
 
 ---
@@ -55,7 +56,7 @@ This research introduces a **progressive four-stage transfer learning methodolog
 - **Stage 2 (Selective Fine-tuning - last 30 layers):** Stability + representation refinement (~97–98.5%)
 - **Stage 3 (Ultra Fine-tuning - last 50 layers):** Higher domain adaptation (~99.2% peak val)
 - **Stage 4 (Class-Weight Optimized Ultra Fine-tuning):** Imbalance-aware refinement, stable generalization
-- **+ Test Time Augmentation (5-view ensemble):** **99.9199% final accuracy**
+- **+ Test-Time Augmentation (5-view ensemble):** **99.9199% final accuracy**
 
 ---
 
@@ -84,7 +85,7 @@ Stage 4: Class-Weight Optimized Ultra Fine-tuning
   - Short controlled refinement (few epochs)
   - Stabilize minority-class sensitivity
 
-Inference Enhancement: Test Time Augmentation (5-policy ensemble averaging)
+Inference Enhancement: Test-Time Augmentation (5-policy ensemble averaging)
 ```
 
 ### Medical Image Preprocessing Pipeline
@@ -93,7 +94,7 @@ Inference Enhancement: Test Time Augmentation (5-policy ensemble averaging)
 3. **Normalization:** Stable neural network input
 4. **Augmentation:** Medical-imaging appropriate transforms
 
-### Test Time Augmentation Strategy
+### Test-Time Augmentation Strategy
 - Base prediction (no augmentation)
 - Horizontal flip variations
 - Small rotation adjustments  
@@ -227,6 +228,7 @@ This project represents the culmination of intensive undergraduate research, dem
 ---
 
 *© 2025 Ziad M. Amer. This project is protected under intellectual property rights while being shared for academic advancement.*
+
 
 
 
