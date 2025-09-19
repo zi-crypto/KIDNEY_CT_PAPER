@@ -34,7 +34,6 @@ Unlike conventional fine-tuning, this pipeline incrementally unlocks model capac
 ### Our Innovation
 - **Progressive Fine-Tuning Pipeline:** Feature extraction → selective fine-tuning → ultra fine-tuning → class-weight optimized ultra refinement
 - **Class Imbalance Mitigation:** Automated computation + Bayesian search of weighting space
-- **Medical-Optimized Preprocessing:** Custom HU windowing + CLAHE enhancement
 - **TestTime Augmentation:** 5-strategy ensemble for maximum accuracy
 - **CPU-Friendly Implementation:** Accessible without expensive GPU hardware
 
@@ -45,7 +44,6 @@ Unlike conventional fine-tuning, this pipeline incrementally unlocks model capac
 | Metric | Achievement |
 |--------|-------------|
 | **Accuracy (TTA)** | **99.9199%** |
-| **Accuracy (Standard Inference)** | 97.99% |
 | **Dataset** | 12,446 CT images |
 | **Classes** | Normal, Cyst, Stone, Tumor |
 | **Overall Epoch Budget** | ~30 effective epochs (early stopping per step) |
@@ -89,10 +87,9 @@ Inference Enhancement: Test-Time Augmentation (5-policy ensemble averaging)
 ```
 
 ### Medical Image Preprocessing Pipeline
-1. **HU Windowing:** Optimize for kidney tissue contrast
-2. **CLAHE Enhancement:** Adaptive histogram equalization
-3. **Normalization:** Stable neural network input
-4. **Augmentation:** Medical-imaging appropriate transforms
+1. **Resizing:** Resize all input images to 224*244 
+2. **Normalization:** Stable neural network input
+3. **Augmentation:** Medical-imaging appropriate transforms
 
 ### Test-Time Augmentation Strategy
 - Base prediction (no augmentation)
@@ -146,10 +143,9 @@ This implementation is optimized for CPU training, making it accessible without 
 
 ### Research Contributions
 1. **Progressive Fine-Tuning Pipeline:** Adds imbalance-aware optimization beyond conventional multi-phase fine-tuning
-2. **Medical Image Optimization:** Custom HU + CLAHE pipeline tailored to kidney parenchyma contrast dynamics
-3. **High Accuracy Achievement:** 99.9199% (TTA) surpassing typical DenseNet baselines on this task
-4. **Imbalance Mitigation:** Integrated class-weight computation and search improves minority recall
-5. **Accessibility Focus:** CPU-based reproducibility for low-resource academic settings
+2. **High Accuracy Achievement:** 99.9199% (TTA) surpassing typical DenseNet baselines on this task
+3. **Imbalance Mitigation:** Integrated class-weight computation and search improves minority recall
+4. **Accessibility Focus:** CPU-based reproducibility for low-resource academic settings
 
 ### Publication Plans
 This research is being prepared for journal submission with focus on:
@@ -228,6 +224,7 @@ This project represents the culmination of intensive undergraduate research, dem
 ---
 
 *© 2025 Ziad M. Amer. This project is protected under intellectual property rights while being shared for academic advancement.*
+
 
 
 
