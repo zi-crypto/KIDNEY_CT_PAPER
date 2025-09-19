@@ -48,14 +48,14 @@ Unlike conventional fine-tuning, this pipeline incrementally unlocks model capac
 | **Accuracy (Standard Inference)** | 97.99% |
 | **Dataset** | 12,446 CT images |
 | **Classes** | Normal, Cyst, Stone, Tumor |
-| **Overall Epoch Budget** | ~30 effective epochs (early stopping per stage) |
+| **Overall Epoch Budget** | ~30 effective epochs (early stopping per step) |
 | **Hardware** | CPU-optimized |
 
 ### Performance Breakdown
-- **Stage 1 (Feature Extraction):** Rapid convergence to ~91–97% val accuracy (classification head only)
-- **Stage 2 (Selective Fine-tuning - last 30 layers):** Stability + representation refinement (~97–98.5%)
-- **Stage 3 (Ultra Fine-tuning - last 50 layers):** Higher domain adaptation (~99.2% peak val)
-- **Stage 4 (Class-Weight Optimized Ultra Fine-tuning):** Imbalance-aware refinement, stable generalization
+- **Step 1 (Feature Extraction):** Rapid convergence to ~91–97% val accuracy (classification head only)
+- **Step 2 (Selective Fine-tuning - last 30 layers):** Stability + representation refinement (~97–98.5%)
+- **Step 3 (Ultra Fine-tuning - last 50 layers):** Higher domain adaptation (~99.2% peak val)
+- **Class-Weight Balacing By Bayesian Optimization:** Imbalance-aware refinement, stable generalization
 - **+ Test-Time Augmentation (5-view ensemble):** **99.9199% final accuracy**
 
 ---
@@ -64,22 +64,22 @@ Unlike conventional fine-tuning, this pipeline incrementally unlocks model capac
 
 ### Progressive Fine-Tuning Pipeline
 ```
-Stage 1: Feature Extraction
+Step 1: Feature Extraction
   - Freeze all DenseNet201 layers
   - Train only classification head
   - Establish domain alignment
 
-Stage 2: Selective Fine-tuning
+Step 2: Selective Fine-tuning
   - Unfreeze last 30 layers
   - LR = 1e-5 (conservative)
   - Refine high-level discriminative blocks
 
-Stage 3: Ultra Fine-tuning
+Step 3: Ultra Fine-tuning
   - Unfreeze last 50 layers
   - LR = 5e-6 (ultra conservative)
   - Deep adaptation to medical texture statistics
 
-Stage 4: Class-Weight Optimized Ultra Fine-tuning
+Class-Weight Balacing By Bayesian Optimization
   - Compute per-class weights (inverse frequency / smoothed)
   - Bayesian search over weight scaling
   - Short controlled refinement (few epochs)
@@ -228,6 +228,7 @@ This project represents the culmination of intensive undergraduate research, dem
 ---
 
 *© 2025 Ziad M. Amer. This project is protected under intellectual property rights while being shared for academic advancement.*
+
 
 
 
