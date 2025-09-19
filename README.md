@@ -1,4 +1,4 @@
-# Kidney CT Classification using DenseNet201 with Progressive Fine-Tuning Pipeline and Bayesian Optimiztion
+# Kidney CT Detection using DenseNet201 with Progressive Fine-Tuning Pipeline and Bayesian Optimiztion
 
 > **Progressive fine-tuning pipeline with class-weight balancing by Bayesian optimization and Test-Time Augmentation (TTA) achieving up to 99.9199% accuracy**
 
@@ -228,6 +228,7 @@ This project represents the culmination of intensive undergraduate research, dem
 ---
 
 *© 2025 Ziad M. Amer. This project is protected under intellectual property rights while being shared for academic advancement.*
+
 
 
 
