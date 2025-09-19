@@ -32,7 +32,7 @@ Unlike conventional fine-tuning, this pipeline incrementally unlocks model capac
 - Need for automated, reliable diagnostic assistance
 
 ### Our Innovation
-- **Four-Stage Progressive Training:** Feature extraction → selective fine-tuning → ultra fine-tuning → class-weight optimized ultra refinement
+- **Progressive Fine-Tuning Pipeline:** Feature extraction → selective fine-tuning → ultra fine-tuning → class-weight optimized ultra refinement
 - **Class Imbalance Mitigation:** Automated computation + Bayesian search of weighting space
 - **Medical-Optimized Preprocessing:** Custom HU windowing + CLAHE enhancement
 - **TestTime Augmentation:** 5-strategy ensemble for maximum accuracy
@@ -62,7 +62,7 @@ Unlike conventional fine-tuning, this pipeline incrementally unlocks model capac
 
 ## Technical Innovation
 
-### Four-Stage Progressive Training (P4S-TL)
+### Progressive Fine-Tuning Pipeline
 ```
 Stage 1: Feature Extraction
   - Freeze all DenseNet201 layers
@@ -117,7 +117,7 @@ Inference Enhancement: Test-Time Augmentation (5-policy ensemble averaging)
 1. **Clone/Download** this repository
 2. **Install dependencies:** `pip install tensorflow numpy opencv-python scikit-learn matplotlib seaborn`
 3. **Download dataset** and place in correct directory structure
-4. **Open the notebook:** `Kidney_CT_Classification_DenseNet201_FourStage_TTA.ipynb`
+4. **Open the notebook:** `Fine-Tuned_Optimized_TTA_DenseNet201_Kidney_Detection.ipynb`
 5. **Run cells sequentially** to reproduce results
 
 ### CPU-Friendly Design
@@ -145,7 +145,7 @@ This implementation is optimized for CPU training, making it accessible without 
 ## Academic Impact
 
 ### Research Contributions
-1. **Four-Stage Progressive Transfer Learning:** Adds imbalance-aware optimization beyond conventional multi-phase fine-tuning
+1. **Progressive Fine-Tuning Pipeline:** Adds imbalance-aware optimization beyond conventional multi-phase fine-tuning
 2. **Medical Image Optimization:** Custom HU + CLAHE pipeline tailored to kidney parenchyma contrast dynamics
 3. **High Accuracy Achievement:** 99.9199% (TTA) surpassing typical DenseNet baselines on this task
 4. **Imbalance Mitigation:** Integrated class-weight computation and search improves minority recall
@@ -171,7 +171,7 @@ If you use this work in your research, please cite:
 
 ```bibtex
 @mastersthesis{amer2025kidney,
-  title={Progressive Four-Stage Transfer Learning with Class-Weight Optimized Ultra Fine-Tuning and TTA for Kidney CT Classification using DenseNet201},
+  title={Progressive Fine-Tuning Pipeline with Class-Weight Balancing By Bayesian Optimization (CW3BO) and TTA for Kidney CT Classification using DenseNet201},
   author={Amer, Ziad M.},
   year={2025},
   school={Faculty of Computers and Artificial Intelligence, Cairo University},
@@ -221,13 +221,14 @@ If you use this work in your research, please cite:
 
 ## Final Note
 
-This project represents the culmination of intensive undergraduate research, demonstrating that high-impact medical AI research can be conducted with dedication, creativity, and resourcefulness. The novel four-stage methodology (feature extraction → progressive unfreezing → deep adaptation → imbalance-aware refinement) opens new possibilities for medical image classification.
+This project represents the culmination of intensive undergraduate research, demonstrating that high-impact medical AI research can be conducted with dedication, creativity, and resourcefulness. The novel fine-tuning methodology (feature extraction → progressive unfreezing → deep adaptation → imbalance-aware refinement) opens new possibilities for medical image classification.
 
 **Developed to advance accessible, reliable medical AI**
 
 ---
 
 *© 2025 Ziad M. Amer. This project is protected under intellectual property rights while being shared for academic advancement.*
+
 
 
 
